@@ -1,0 +1,73 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "roastbot-vision"
+version = "0.1.0"
+description = "Real-Time Multimodal Vision Sidekick & Desk Critic with Animated Pixel Mascot and Edge Camera Privacy"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [
+    { name = "Manan Sur", email = "portfolio@example.com" }
+]
+keywords = [
+    "vision-language-model",
+    "multimodal-ai",
+    "desktop-companion",
+    "computer-vision",
+    "edge-ai",
+    "opencv",
+    "real-time-ai",
+    "pyqt6",
+    "fastapi",
+    "interactive-assistant"
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: End Users/Desktop",
+    "Topic :: Multimedia :: Graphics :: Capture :: Digital Camera",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Games/Entertainment",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+]
+dependencies = [
+    "opencv-python>=4.8.0",
+    "numpy>=1.24.0",
+    "pillow>=10.0.0",
+    "pydantic>=2.0.0",
+    "httpx>=0.25.0",
+    "fastapi>=0.100.0",
+    "uvicorn>=0.23.0",
+    "click>=8.0.0",
+    "rich>=13.0.0",
+    "pyttsx3>=2.90",
+]
+
+[project.optional-dependencies]
+gui = [
+    "PyQt6>=6.5.0",
+]
+dev = [
+    "pytest>=8.0.0",
+    "pytest-cov>=4.0.0",
+    "httpx>=0.25.0",
+]
+
+[project.scripts]
+roastbot = "roastbot.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["roastbot*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
